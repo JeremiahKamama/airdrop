@@ -1,30 +1,12 @@
-# FIAT DAO - Airdrop MerkleTree distributor
+# airdrop
 
-This is a fork of [UniverseXYZ MerkleDistributor](https://github.com/UniverseXYZ/merkle-distributor).
+This repository contains the data, scripts contracts used for the FDT airdrop as part of FIAT DAO's Jubilee program. 
 
-### 1. Clone this repo
-```shell
-git clone https://github.com/fiatdao/airdrop
-```
+The raw data and resulting list of wallets and respective rewards to be distributed in form of FDT tokens are located in the `data` folder and everyone is encouraged to review the rewards list prior to the announcement of the airdrop:
 
-### 2. Install dependencies
-```shell
-npm install
-```
+The raw data is an export of this [Dune Dashboard](https://dune.xyz/Qlab/Fiat-Barnbridge-airdrop) which has been shared publicly. The resulting list of wallets and rewards is derived through this [python script](https://colab.research.google.com/drive/1H3KpUDmAlrLtcG74UKCW6XqLgLEckAnS?usp=sharing) directly from the raw data.
 
-### 3. Run tests
-```shell
-npm test
-```
-
-### 4. Deployment
-```shell
-// Rinkeby
-npx hardhat --network rinkeby deploy-airdrop-test --rewardtoken "" --emergencyreceiver "" --bonusstart "" --weeksbonusduration "" --weeksemergency ""
-
-// Mainnet
-npx hardhat --network rinkeby deploy-airdrop --rewardtoken "" --emergencyreceiver "" --bonusstart "" --weeksbonusduration "" --weeksemergency ""
-```
+If your wallet does not show up in the list this means you have not staked BOND tokens in any of the supported contracts within the eligible period and did not vote on any BarnBridge governance proposals 1 through 7. The criteria is set out in this [announcement](https://medium.com/fiat-dao/the-fiat-dao-token-jubilee-d724403f6eab).
 
 # Active Contracts
 
@@ -48,7 +30,7 @@ npx hardhat --network rinkeby deploy-airdrop --rewardtoken "" --emergencyreceive
 
 [Rinkeby-FDT](https://rinkeby.etherscan.io/address/0xb9e8d9890b41eb4b21b52353a5d4671f48b9840f)
 
-[MerkleDistributor](https://rinkeby.etherscan.io/address/0x060E8FEFE51eB550147bAec5265BdB6F6aD6CcC4#code)
+[MerkleDistributor](https://rinkeby.etherscan.io/address/0x1Afd8c923a5108DeEc72C17565E4550494629c61#code)
 
 `Merkle root hash: 0xe3e4b3efdbcae06ea9c423f236f7b41c3d4a88ab9f19487a6b0e64b008c7316a`
 
