@@ -14,9 +14,9 @@ If your wallet does not show up in the list this means you have not staked BOND 
 
 ### Addresses
 
-[MerkleDistributor](https://etherscan.io/)
+[MerkleDistributor](https://etherscan.io/address/0xf9E68acA402bB841084E185E6F89201927F90903)
 
-`Merkle root hash: `
+`Merkle root hash: 0x2c200e5439f065892a8193dbd5f8cfd36e4578903208ed572e3b766e7f9630ba`
 
 ### Distribution File
 **Note:** The file used in the deployment and root generation is [here](./scripts/airdrop.json).

@@ -78,13 +78,14 @@ async function deploy(reward_token: string, emergency_receiver: string, sbonus_s
 
 	const airdropAccounts = airdrop.map((drop) => ({
 		account: drop.address,
-		amount: ethers.utils.parseEther(drop.earnings.toString())
+		amount: BigNumber.from(drop.earnings)
 	}));
 
 	const tree = new BalanceTree(airdropAccounts);
 	const root = tree.getHexRoot();
 	const totalAllocatedAirdrop = calculateTotalAirdrop(airdropAccounts);
 
+	console.log("TOTAL:", totalAllocatedAirdrop.toString());
 	console.log("###############################################");
 	console.log(`merkle tree root: ${root}`);
 	console.log("##############################################");
@@ -106,7 +107,6 @@ async function deploy(reward_token: string, emergency_receiver: string, sbonus_s
 	console.log('Deploying MerkleDistributor, please wait...');
 	await merkleInstance.deployed();
 	console.log(`MerkleDistributor Deployed at ${merkleInstance.address}`)
-
 
 	console.log('Verifying contract on Etherscan...');
 	await hardhat.run("verify:verify", {
