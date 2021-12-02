@@ -90,7 +90,7 @@ contract MerkleDistributor is IMerkleDistributor {
       IERC20(token).transfer(account, adjustedAmount),
       "MerkleDistributor: Transfer failed."
     );
-    emit Claimed(index, account, adjustedAmount);
+    emit Claimed(index, account, amount, adjustedAmount);
   }
 
   function getBonus() public view returns (uint256) {
